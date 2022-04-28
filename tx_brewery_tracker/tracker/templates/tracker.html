@@ -23,8 +23,7 @@
         <tr class="table-secondary">
             <th>Name</th>
             <th>Type</th>
-            <th>Street Address</th>
-            <th>City</th>
+            <th>Address</th>
             <th>Website</th>
             <th>Phone #</th>
         </tr>
@@ -34,10 +33,9 @@
         <tr class="table-secondary">
             <td>{{ brewery.name }}</td>
             <td>{{ brewery.type }}</td>
-            <td>{{ brewery.street }}</td>
-            <td>{{ brewery.city }}</td>
+            <td>{{ brewery.format_Address }}</td>
             <td>{{ brewery.website_url }}</td>
-            <td>{{ brewery.phone }}</td>
+            <td>{{ brewery.format_Phone }}</td>
         </tr>
     {% endfor %}
     </tbody>    

@@ -20,3 +20,22 @@ class Brewery(models.Model):
     website_url = models.CharField(max_length=100, null=True)
     updated_at = models.CharField(max_length=100, null=True) 
     created_at = models.CharField(max_length=100, null=True)
+
+    def format_Phone(self):
+        phone = self.phone
+        if phone:
+            return "(" + phone[0:3] + ") " + phone[3:6] + "-" + phone[6:]
+        else:
+            return None
+
+    def format_Address(self):
+        formatAddr = ""
+        if self.street:
+            formatAddr += self.street + ", "
+            if self.city:
+                formatAddr += self.city + ", "
+                if self.state:
+                    formatAddr += self.state + ", "
+                    if self.country:
+                        formatAddr += self.country
+        return formatAddr
